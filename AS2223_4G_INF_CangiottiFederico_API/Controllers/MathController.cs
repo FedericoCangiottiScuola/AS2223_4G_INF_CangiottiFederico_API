@@ -76,5 +76,31 @@ namespace AS2223_4G_INF_CangiottiFederico_API.Controllers
                 outcome,
             });
         }
+
+        [HttpGet("EquazioneSecondoGrado")]
+        public JsonResult EquazioneSecondoGrado(int a, int b, int c)
+        {
+            Result outcome = new(Status.OK);
+
+            double delta = Math.Pow(b, 2) - 4 * a * c;
+            string concavita = "";
+            if (a > 0)
+            {
+                concavita = "convessa";
+            } else if (a < 0)
+            {
+                concavita = "concava";
+            }
+
+            return Json(new
+            {
+                result = new
+                {
+                    delta = delta,
+                    concavita = concavita,
+                },
+                outcome,
+            });
+        }
     }
 }
