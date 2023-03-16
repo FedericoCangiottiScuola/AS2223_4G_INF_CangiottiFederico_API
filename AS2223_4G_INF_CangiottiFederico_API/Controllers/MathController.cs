@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using static AS2223_4G_INF_CangiottiFederico_API.Math;
+using static AS2223_4G_INF_CangiottiFederico_API.MathResult;
 
 namespace AS2223_4G_INF_CangiottiFederico_API.Controllers
 {
@@ -12,10 +12,10 @@ namespace AS2223_4G_INF_CangiottiFederico_API.Controllers
         public JsonResult PariDispari(int input)
         {
             Result outcome = new(Status.OK);
-            
+
             return Json(new
             {
-                result = input%2==0 ? "pari" : "dispari",
+                result = input % 2 == 0 ? "pari" : "dispari",
                 outcome,
             });
         }

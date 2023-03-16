@@ -2,7 +2,7 @@
 
 namespace AS2223_4G_INF_CangiottiFederico_API
 {
-    public class Math
+    public class MathResult
     {
         public enum Status
         {
