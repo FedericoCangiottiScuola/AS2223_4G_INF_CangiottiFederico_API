@@ -49,5 +49,32 @@ namespace AS2223_4G_INF_CangiottiFederico_API.Controllers
                 outcome,
             });
         }
+
+        [HttpGet("Tasse")]
+        public JsonResult Tasse(int input)
+        {
+            Result outcome = new(Status.OK);
+            int tasse;
+
+            if (input > 35000)
+            {
+                int differenza = Math.Abs(input - 35000);
+                tasse = (35000 * 12 / 100) + (differenza * 28 / 100);
+
+                return Json(new
+                {
+                    result = tasse,
+                    outcome,
+                });
+            }
+
+            tasse = input * 12 / 100;
+
+            return Json(new
+            {
+                result = tasse,
+                outcome,
+            });
+        }
     }
 }
