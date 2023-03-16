@@ -8,7 +8,7 @@ namespace AS2223_4G_INF_CangiottiFederico_API.Controllers
     [Route("api/v1/")]
     public class MathController : Controller
     {
-        [HttpGet("GetAddition")]
+        [HttpGet("PariDispari")]
         public JsonResult PariDispari(int input)
         {
             Result outcome = new(Status.OK);
