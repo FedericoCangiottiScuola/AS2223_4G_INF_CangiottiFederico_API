@@ -98,6 +98,7 @@ namespace AS2223_4G_INF_CangiottiFederico_API.Controllers
                 {
                     delta = delta,
                     concavita = concavita,
+                    parametri = $"{a}, {b}, {c}"
                 },
                 outcome,
             });
