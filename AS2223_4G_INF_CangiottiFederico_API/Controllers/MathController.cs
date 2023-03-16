@@ -19,5 +19,35 @@ namespace AS2223_4G_INF_CangiottiFederico_API.Controllers
                 outcome,
             });
         }
+
+        [HttpGet("Fattoriale")]
+        public JsonResult Fattoriale(int input)
+        {
+            Result outcome;
+
+            if (input <= 0)
+            {
+                outcome = new(Status.ERROR, "Wrong input value");
+                return Json(new
+                {
+                    result = 0,
+                    outcome,
+                });
+            }
+
+            outcome = new(Status.OK);
+
+            int fattoriale = 1;
+            for (int i = 1; i <= input; i++)
+            {
+                fattoriale *= i;
+            }
+
+            return Json(new
+            {
+                result = fattoriale,
+                outcome,
+            });
+        }
     }
 }
